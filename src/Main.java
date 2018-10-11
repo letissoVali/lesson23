@@ -15,19 +15,25 @@ public class Main {
     public static void main(String[] args) {
         ImplBasket implBasket = new ImplBasket();
         System.out.println("Add products in order");
-        implBasket.addProduct("Koffe",3);
+        implBasket.addProduct("Coffee",3);
         implBasket.addProduct("Tea",1);
         implBasket.addProduct("Cookies",2);
         implBasket.addProduct("Buns",5);
         System.out.println("Print order list");
         implBasket.getProducts();
         System.out.println("Edit products in order list");
-        implBasket.updateProductQuantity("Koffe",2);
+        implBasket.updateProductQuantity("Coffee",2);
         implBasket.updateProductQuantity("Buns",6);
         implBasket.updateProductQuantity("Bunnies",2);
+        implBasket.updateProductQuantity("Koffee",2);
         implBasket.removeProduct("Tea");
         System.out.println("Print edited order list");
         implBasket.getProducts();
+        System.out.println("Получение количества товаров по названию");
+        System.out.println(implBasket.getProductQuantity("Coffee"));
+        System.out.println(implBasket.getProductQuantity("Buns"));
+        //implBasket.getProductQuantity("Tea"); //Проблема с товарами не в списке
+
         System.out.println("Clean order list");
         implBasket.clear();
         System.out.println("Print cleaned order list");

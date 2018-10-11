@@ -7,7 +7,7 @@ public class ImplBasket implements Basket{
     List<String> list = new ArrayList<String>();
     List<Integer> quant = new ArrayList<Integer>();
 
-    @Override // Основой будем считать то что название и колечество вводятся с одним индексом в разные массив листов
+    @Override // Основой будем считать то что название и колечество вводятся с одним индексом в разные массивы листов
     public void addProduct(String product, int quantity) {
         list.add(product);
         quant.add(quantity);
@@ -20,7 +20,7 @@ public class ImplBasket implements Basket{
         quant.remove(index);
     }
 
-    @Override
+    @Override //Обновление колличиства товаров
     public void updateProductQuantity(String product, int quantity) {
         Integer index = getIndex(product);
         //System.out.println(index);
@@ -31,13 +31,13 @@ public class ImplBasket implements Basket{
         }
     }
 
-    @Override
+    @Override //Удаление из массивов всех элементов
     public void clear() {
         list.removeAll(list);
         quant.removeAll(quant);
     }
 
-    @Override
+    @Override //Получение все продуктов из массива
     public List<String> getProducts() { //Не понял как возвращать значение из массива в return
         if (list.isEmpty()) {
             System.out.println("Список пуст");
@@ -52,7 +52,9 @@ public class ImplBasket implements Basket{
     @Override
     public int getProductQuantity(String product) {
         Integer index = getIndex(product);
-        return quant.get(index);
+        //System.out.println(quant.get(index));
+        int result = quant.get(index);
+        return result;
     }
 
     /**
